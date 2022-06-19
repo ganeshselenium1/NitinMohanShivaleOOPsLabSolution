@@ -6,6 +6,7 @@ class Employee{
 	String lname;
 	String password;
 	String email;
+	String dept="";
 	
 	Employee(String fname,String lname)
 	{
@@ -15,7 +16,6 @@ class Employee{
 	public String chooseDepartment()
 	{
 		int ch;
-		String str="";
 		System.out.println("Please enter the departmnet from the following");
 		System.out.println("1.Technical\n2.Admin\n3.Human Resource\n4.Legal");
 		System.out.println("Enter your choice:");
@@ -23,12 +23,12 @@ class Employee{
 		ch=sc.nextInt();
 		switch(ch)
 		{
-		case 1:str="Technical";break;
-		case 2:str="Admin";break;
-		case 3:str="Human Resource";break;
-		case 4:str="Legal";break;
+		case 1:dept="Technical";break;
+		case 2:dept="Admin";break;
+		case 3:dept="Human Resource";break;
+		case 4:dept="Legal";break;
 		}
-		return str;
+		return dept;
 	}
 	
 	public String generatePassword()
@@ -47,7 +47,7 @@ class Employee{
 	
 	public String generateEmailAddress()
 	{
-		email=fname.toLowerCase()+lname.toLowerCase()+"@tech.abc.com";
+		email=fname.toLowerCase()+lname.toLowerCase()+"@"+dept+".abc.com";
 		return email;
 	}
 	
